@@ -17,25 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="jkb-Zh-5Xe">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="CdG-bb-g1f">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jkb-Zh-5Xe" secondAttribute="trailing" id="AUx-uM-Dzg"/>
-                            <constraint firstItem="jkb-Zh-5Xe" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="YZ1-4k-Tcf"/>
-                            <constraint firstItem="jkb-Zh-5Xe" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="jui-46-zxD"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="jkb-Zh-5Xe" secondAttribute="bottom" id="qRI-Tr-5Cg"/>
+                            <constraint firstAttribute="trailing" secondItem="CdG-bb-g1f" secondAttribute="trailing" id="Wxq-gp-VI8"/>
+                            <constraint firstItem="CdG-bb-g1f" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="gNn-ym-jmJ"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="CdG-bb-g1f" secondAttribute="bottom" id="tyN-v1-ssR"/>
+                            <constraint firstItem="CdG-bb-g1f" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="z4g-Ho-Eue"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382" y="404"/>
+            <point key="canvasLocation" x="597" y="359"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Default.png" width="750" height="1334"/>
+        <image name="Default.png" width="640" height="1136"/>
     </resources>
 </document>

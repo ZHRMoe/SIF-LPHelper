@@ -16,7 +16,7 @@
 		53D814EC1C646DE6002C01CA /* SIFLPHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D814EB1C646DE6002C01CA /* SIFLPHelperTests.m */; };
 		53D814F71C646DE6002C01CA /* SIFLPHelperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D814F61C646DE6002C01CA /* SIFLPHelperUITests.m */; };
 		53D815051C647070002C01CA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D815041C647070002C01CA /* icon.png */; };
-		53D815071C64719E002C01CA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D815061C64719E002C01CA /* Default.png */; };
+		53D952411C64D67F006F2F07 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D952401C64D67F006F2F07 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		53D814F61C646DE6002C01CA /* SIFLPHelperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIFLPHelperUITests.m; sourceTree = "<group>"; };
 		53D814F81C646DE6002C01CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D815041C647070002C01CA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		53D815061C64719E002C01CA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		53D952401C64D67F006F2F07 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				53D815041C647070002C01CA /* icon.png */,
-				53D815061C64719E002C01CA /* Default.png */,
+				53D952401C64D67F006F2F07 /* Default.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -261,7 +261,7 @@
 				53D814E11C646DE6002C01CA /* LaunchScreen.storyboard in Resources */,
 				53D814DE1C646DE6002C01CA /* Assets.xcassets in Resources */,
 				53D814DC1C646DE6002C01CA /* Main.storyboard in Resources */,
-				53D815071C64719E002C01CA /* Default.png in Resources */,
+				53D952411C64D67F006F2F07 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

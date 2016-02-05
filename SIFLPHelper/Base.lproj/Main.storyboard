@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ISn-14-9JD">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="QdR-L7-Baf">
+            <objects>
+                <navigationController id="ISn-14-9JD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0t1-sR-QvW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="o1B-YP-xoY" kind="relationship" relationship="rootViewController" id="bey-d3-Qoe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aF9-8q-Mvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="466"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TjT-TH-NQj">
+            <objects>
+                <viewController id="o1B-YP-xoY" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AnC-P8-mhu"/>
+                        <viewControllerLayoutGuide type="bottom" id="aj4-T9-00J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="px1-AM-rBU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkK-Zt-MuY">
+                                <rect key="frame" x="147" y="319" width="81" height="30"/>
+                                <state key="normal" title="Niconiconi~"/>
+                                <connections>
+                                    <action selector="startCalculateButtonTouched:" destination="o1B-YP-xoY" eventType="touchUpInside" id="URg-YN-rRv"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGz-aA-OIe">
+                                <rect key="frame" x="67" y="104" width="240" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="当前等级" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X97-t2-Xu5">
+                                        <rect key="frame" x="29" y="27" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIZ-wf-yei">
+                                        <rect key="frame" x="115" y="22" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="当前LP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6l-eZ-P5l">
+                                        <rect key="frame" x="29" y="80" width="54" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2El-UV-HRR">
+                                        <rect key="frame" x="115" y="76" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="mBz-1l-ekk"/>
+                                    <constraint firstAttribute="height" constant="120" id="nUN-wc-GT2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Waz-uj-Krs">
+                                <rect key="frame" x="67" y="359" width="240" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LP最大值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faS-YH-td5">
+                                        <rect key="frame" x="31" y="29" width="71" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EXP最大值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjb-oh-Yjs">
+                                        <rect key="frame" x="19" y="69" width="83" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOd-OX-Uk8">
+                                        <rect key="frame" x="116" y="29" width="105" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbe-Ct-gMc">
+                                        <rect key="frame" x="116" y="69" width="105" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="neB-da-oGN"/>
+                                    <constraint firstAttribute="height" constant="120" id="pQ5-PJ-adO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CzJ-eq-Qao">
+                                <rect key="frame" x="47" y="517" width="280" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="预计LP恢复完的时间是" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HY0-Ft-fgk">
+                                        <rect key="frame" x="54" y="17" width="173" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5J-zC-sZ1">
+                                        <rect key="frame" x="95" y="90" width="90" height="30"/>
+                                        <state key="normal" title="到时候提醒我"/>
+                                        <connections>
+                                            <action selector="remindButtonTouched:" destination="o1B-YP-xoY" eventType="touchUpInside" id="aSH-6D-4O9"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jri-Zf-PzF">
+                                        <rect key="frame" x="8" y="53" width="264" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="z4D-eC-5l3"/>
+                                    <constraint firstAttribute="height" constant="130" id="zwH-xW-J9f"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QGz-aA-OIe" firstAttribute="top" secondItem="AnC-P8-mhu" secondAttribute="bottom" constant="40" id="3uo-7G-4Ox"/>
+                            <constraint firstItem="YkK-Zt-MuY" firstAttribute="centerX" secondItem="px1-AM-rBU" secondAttribute="centerX" id="NYA-1O-Syg"/>
+                            <constraint firstItem="CzJ-eq-Qao" firstAttribute="centerX" secondItem="px1-AM-rBU" secondAttribute="centerX" id="RQA-M5-ySP"/>
+                            <constraint firstItem="Waz-uj-Krs" firstAttribute="centerX" secondItem="px1-AM-rBU" secondAttribute="centerX" id="V4E-kz-eFX"/>
+                            <constraint firstItem="Waz-uj-Krs" firstAttribute="top" secondItem="YkK-Zt-MuY" secondAttribute="bottom" constant="10" id="Xjs-6I-TeL"/>
+                            <constraint firstItem="QGz-aA-OIe" firstAttribute="centerX" secondItem="px1-AM-rBU" secondAttribute="centerX" id="v2L-nk-jqO"/>
+                            <constraint firstItem="aj4-T9-00J" firstAttribute="top" secondItem="CzJ-eq-Qao" secondAttribute="bottom" constant="20" id="wS9-kz-ceD"/>
+                            <constraint firstItem="YkK-Zt-MuY" firstAttribute="centerY" secondItem="px1-AM-rBU" secondAttribute="centerY" id="zEa-Gc-d46"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YK3-Pr-Qxu"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="currentLPTextField" destination="2El-UV-HRR" id="DPP-YW-az6"/>
+                        <outlet property="currentLevelTextField" destination="HIZ-wf-yei" id="3Ze-MP-YA9"/>
+                        <outlet property="estimatedTimeLabel" destination="Jri-Zf-PzF" id="7OW-Zb-hdT"/>
+                        <outlet property="maxEXPLabel" destination="hbe-Ct-gMc" id="qKZ-QW-Ce2"/>
+                        <outlet property="maxLPLabel" destination="GOd-OX-Uk8" id="3DB-mr-T8i"/>
+                        <outlet property="remindButton" destination="E5J-zC-sZ1" id="Z6U-jY-59Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67k-MQ-PQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810.5" y="445.5"/>
+        </scene>
+    </scenes>
+</document>

@@ -61,7 +61,7 @@
     self.maxLPLabel.text = [NSString stringWithFormat:@"%ld", (long)maxLP];
     self.maxEXPLabel.text = [NSString stringWithFormat:@"%ld", (long)maxExp];
     if (lp > maxLP) {
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"意味は分からない" message:@"填写的LP大于当前等级的LP上限" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"意味は分からない" message:@"填写的LP大于当前等级的LP上限" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
         [av show];
         self.remindButton.hidden = YES;
         self.estimatedTimeLabel.text = @"LP填写错误";
@@ -77,6 +77,8 @@
 
 - (IBAction)remindButtonTouched:(id)sender {
     [self registerLocalNotificationWithTime:self.timeSinceNow];
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"( · 8 · )" message:@"记住了，到时候会通知你的" delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil];
+    [av show];
 }
 
 - (void)registerLocalNotificationWithTime:(NSTimeInterval)timeInterval {
@@ -85,7 +87,7 @@
     notification.fireDate = fireDate;
     notification.timeZone = [NSTimeZone defaultTimeZone];
     notification.repeatInterval = kCFCalendarUnitSecond;
-    notification.alertBody = @"LP已经恢复完啦，快去肝活动吧！";
+    notification.alertBody = @"LP已经恢复完啦，快去肝活动吧！Fightだよ~";
     notification.applicationIconBadgeNumber += 1;
     notification.soundName = UILocalNotificationDefaultSoundName;
     

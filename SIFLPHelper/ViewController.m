@@ -66,8 +66,7 @@
         self.remindButton.hidden = YES;
         self.estimatedTimeLabel.text = @"LP填写错误";
     } else {
-//        self.timeSinceNow = 360 * (maxLP - lp);
-        self.timeSinceNow = 10;
+        self.timeSinceNow = 360 * (maxLP - lp);
         NSDate *estimatedTime = [NSDate dateWithTimeIntervalSinceNow:self.timeSinceNow];
         NSDateFormatter *formatter = [NSDateFormatter new];
         formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";

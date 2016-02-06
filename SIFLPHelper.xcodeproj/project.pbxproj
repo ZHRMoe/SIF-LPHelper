@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		530802BC1C65CE2F0033A061 /* LPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 530802BB1C65CE2F0033A061 /* LPWebViewController.m */; };
+		530802BF1C65CEB50033A061 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 530802BE1C65CEB50033A061 /* BaseWebViewController.m */; };
+		530802C41C65D1060033A061 /* LPNetworkCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 530802C31C65D1060033A061 /* LPNetworkCenter.m */; };
+		53BEFA581C65D9F300AD54CF /* NotificationNotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BEFA571C65D9F300AD54CF /* NotificationNotesTableViewController.m */; };
+		53BEFA5B1C65DBB900AD54CF /* LPNotificationNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BEFA5A1C65DBB900AD54CF /* LPNotificationNote.m */; };
 		53D814D31C646DE6002C01CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D814D21C646DE6002C01CA /* main.m */; };
 		53D814D61C646DE6002C01CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D814D51C646DE6002C01CA /* AppDelegate.m */; };
 		53D814D91C646DE6002C01CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D814D81C646DE6002C01CA /* ViewController.m */; };
@@ -37,6 +42,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		530802BA1C65CE2F0033A061 /* LPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPWebViewController.h; sourceTree = "<group>"; };
+		530802BB1C65CE2F0033A061 /* LPWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPWebViewController.m; sourceTree = "<group>"; };
+		530802BD1C65CEB50033A061 /* BaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
+		530802BE1C65CEB50033A061 /* BaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
+		530802C21C65D1060033A061 /* LPNetworkCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPNetworkCenter.h; sourceTree = "<group>"; };
+		530802C31C65D1060033A061 /* LPNetworkCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPNetworkCenter.m; sourceTree = "<group>"; };
+		53BEFA561C65D9F300AD54CF /* NotificationNotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationNotesTableViewController.h; sourceTree = "<group>"; };
+		53BEFA571C65D9F300AD54CF /* NotificationNotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationNotesTableViewController.m; sourceTree = "<group>"; };
+		53BEFA591C65DBB900AD54CF /* LPNotificationNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPNotificationNote.h; sourceTree = "<group>"; };
+		53BEFA5A1C65DBB900AD54CF /* LPNotificationNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPNotificationNote.m; sourceTree = "<group>"; };
 		53D814CE1C646DE6002C01CA /* SIFLPHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIFLPHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D814D21C646DE6002C01CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		53D814D41C646DE6002C01CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +97,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		530802C01C65D0D80033A061 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53D814D71C646DE6002C01CA /* ViewController.h */,
+				53D814D81C646DE6002C01CA /* ViewController.m */,
+				530802BD1C65CEB50033A061 /* BaseWebViewController.h */,
+				530802BE1C65CEB50033A061 /* BaseWebViewController.m */,
+				530802BA1C65CE2F0033A061 /* LPWebViewController.h */,
+				530802BB1C65CE2F0033A061 /* LPWebViewController.m */,
+				53BEFA561C65D9F300AD54CF /* NotificationNotesTableViewController.h */,
+				53BEFA571C65D9F300AD54CF /* NotificationNotesTableViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		530802C11C65D0E60033A061 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				530802C21C65D1060033A061 /* LPNetworkCenter.h */,
+				530802C31C65D1060033A061 /* LPNetworkCenter.m */,
+				53BEFA591C65DBB900AD54CF /* LPNotificationNote.h */,
+				53BEFA5A1C65DBB900AD54CF /* LPNotificationNote.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		53D814C51C646DE6002C01CA = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +146,10 @@
 		53D814D01C646DE6002C01CA /* SIFLPHelper */ = {
 			isa = PBXGroup;
 			children = (
+				530802C11C65D0E60033A061 /* Model */,
+				530802C01C65D0D80033A061 /* ViewController */,
 				53D814D41C646DE6002C01CA /* AppDelegate.h */,
 				53D814D51C646DE6002C01CA /* AppDelegate.m */,
-				53D814D71C646DE6002C01CA /* ViewController.h */,
-				53D814D81C646DE6002C01CA /* ViewController.m */,
 				53D814DA1C646DE6002C01CA /* Main.storyboard */,
 				53D814DD1C646DE6002C01CA /* Assets.xcassets */,
 				53D814DF1C646DE6002C01CA /* LaunchScreen.storyboard */,
@@ -286,9 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53BEFA5B1C65DBB900AD54CF /* LPNotificationNote.m in Sources */,
+				53BEFA581C65D9F300AD54CF /* NotificationNotesTableViewController.m in Sources */,
 				53D814D91C646DE6002C01CA /* ViewController.m in Sources */,
+				530802BC1C65CE2F0033A061 /* LPWebViewController.m in Sources */,
 				53D814D61C646DE6002C01CA /* AppDelegate.m in Sources */,
+				530802BF1C65CEB50033A061 /* BaseWebViewController.m in Sources */,
 				53D814D31C646DE6002C01CA /* main.m in Sources */,
+				530802C41C65D1060033A061 /* LPNetworkCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

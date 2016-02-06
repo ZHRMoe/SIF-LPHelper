@@ -7,10 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "LPWebViewController.h"
 
 @interface ViewController ()
 
 @property (nonatomic) NSDate *estimatedTime;
+@property (strong, nonatomic) UIViewController *llHelperVC;
 
 @property (weak, nonatomic) IBOutlet UITextField *currentLevelTextField;
 @property (weak, nonatomic) IBOutlet UITextField *currentLPTextField;
@@ -22,10 +24,22 @@
 
 - (IBAction)startCalculateButtonTouched:(id)sender;
 - (IBAction)remindButtonTouched:(id)sender;
+- (IBAction)llHelperButtonTouched:(id)sender;
 
 @end
 
 @implementation ViewController
+
+- (UIViewController *)llHelperVC {
+    if (!_llHelperVC) {
+        LPWebViewController *rootVC = [[LPWebViewController alloc] init];
+        rootVC.requestURLString = @"http://llhelper.duapp.com/";
+        rootVC.pageTitle = @"LLHelper";
+        UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:rootVC];
+        _llHelperVC = naviVC;
+    }
+    return _llHelperVC;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -107,13 +121,17 @@
     [av show];
 }
 
+- (IBAction)llHelperButtonTouched:(id)sender {
+    [self presentViewController:self.llHelperVC animated:YES completion:nil];
+}
+
 - (void)registerLocalNotificationWithTime:(NSDate *)estimatedTime {
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     notification.fireDate = estimatedTime;
     notification.timeZone = [NSTimeZone defaultTimeZone];
     notification.repeatInterval = 0;
     notification.alertBody = @"LP已经恢复完啦，快去肝活动吧！Fightだよ~";
-    notification.applicationIconBadgeNumber += 1;
+    notification.applicationIconBadgeNumber = 1;
     notification.soundName = UILocalNotificationDefaultSoundName;
     
     // Auth for iOS 8 or later version

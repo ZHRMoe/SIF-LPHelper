@@ -24,7 +24,7 @@
         <!--SIF LP助手-->
         <scene sceneID="TjT-TH-NQj">
             <objects>
-                <viewController id="o1B-YP-xoY" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="o1B-YP-xoY" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AnC-P8-mhu"/>
                         <viewControllerLayoutGuide type="bottom" id="aj4-T9-00J"/>
@@ -66,7 +66,6 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="mBz-1l-ekk"/>
                                     <constraint firstAttribute="height" constant="120" id="nUN-wc-GT2"/>
@@ -105,7 +104,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="neB-da-oGN"/>
                                     <constraint firstAttribute="height" constant="120" id="pQ5-PJ-adO"/>
@@ -138,7 +136,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jri-Zf-PzF">
                                         <rect key="frame" x="8" y="37" width="264" height="21"/>
@@ -147,7 +144,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="z4D-eC-5l3"/>
                                     <constraint firstAttribute="height" constant="130" id="zwH-xW-J9f"/>

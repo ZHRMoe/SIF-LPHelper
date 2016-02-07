@@ -1,16 +1,16 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  SIFLPHelper
 //
 //  Created by ZHRMoe on 16/2/5.
 //  Copyright © 2016年 ZHRMoe. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "LPWebViewController.h"
 #import "LPCoreAlgorithm.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 
 @property (nonatomic) NSDate *estimatedTime;
 @property (strong, nonatomic) UIViewController *llHelperVC;
@@ -30,7 +30,7 @@
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (UIViewController *)llHelperVC {
     if (!_llHelperVC) {

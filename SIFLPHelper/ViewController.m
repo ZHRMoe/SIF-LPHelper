@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LPWebViewController.h"
+#import "LPCoreAlgorithm.h"
 
 @interface ViewController ()
 
@@ -25,6 +26,7 @@
 - (IBAction)startCalculateButtonTouched:(id)sender;
 - (IBAction)remindButtonTouched:(id)sender;
 - (IBAction)llHelperButtonTouched:(id)sender;
+- (IBAction)cancelButtonTouched:(id)sender;
 
 @end
 
@@ -62,53 +64,59 @@
     [super didReceiveMemoryWarning];
 }
 
-- (double)expFunc:(NSInteger)level {
-    return 0.522 * level * level + 0.522 * level + 10.0005;
-}
-
 - (void)hideKeyBoard:(UITapGestureRecognizer *)tap {
     [self.currentLevelTextField resignFirstResponder];
     [self.currentLPTextField resignFirstResponder];
 }
 
 - (IBAction)startCalculateButtonTouched:(id)sender {
-    NSInteger level = [self.currentLevelTextField.text integerValue];
-    NSInteger lp = [self.currentLPTextField.text integerValue];
-    NSInteger maxLP = 25 + floor(MIN(level, 300) / 2) + floor(MAX(level - 300, 0) / 3);
-    NSInteger maxExp = 0;
-    if (level <= 0) {
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"意味は分からない" message:@"等级填写错误" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
-        [av show];
-        self.maxLPLabel.text = @"Error";
-        self.maxEXPLabel.text = @"Error";
-        self.estimatedTimeLabel.text = @"Error";
+    NSInteger level, lp, maxLP, maxEXP;
+    if (![LPCoreAlgorithm isPureInt:self.currentLevelTextField.text] || (![LPCoreAlgorithm isPureInt:self.currentLPTextField.text] && [self.currentLPTextField.text integerValue])) {
+        [self dataError];
     } else {
-        if (level > 33) {
-            maxExp = round([self expFunc:level] - [self expFunc:level - 33]);
+        level = [self.currentLevelTextField.text integerValue];
+        lp = [self.currentLPTextField.text integerValue];
+        maxLP = 25 + floor(MIN(level, 300) / 2) + floor(MAX(level - 300, 0) / 3);
+        if (level <= 0) {
+            [self dataError];
         } else {
-            maxExp = round([self expFunc:level]);
-        }
-        self.maxLPLabel.text = [NSString stringWithFormat:@"%ld", (long)maxLP];
-        self.maxEXPLabel.text = [NSString stringWithFormat:@"%ld", (long)maxExp];
-        if (level < 100) {
-            self.maxJPEXPLabel.text = [NSString stringWithFormat:@"%ld(日服)", (long)maxExp / 2];
-        } else {
-            self.maxJPEXPLabel.text = @"";
-        }
-        if (lp > maxLP || lp < 0) {
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"意味は分からない" message:@"LP填写错误" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
-            [av show];
-            self.remindButton.hidden = YES;
-            self.estimatedTimeLabel.text = @"Error";
-        } else {
-            NSTimeInterval timeSinceNow = 360 * (maxLP - lp);
-            self.estimatedTime = [NSDate dateWithTimeIntervalSinceNow:timeSinceNow];
-            NSDateFormatter *formatter = [NSDateFormatter new];
-            formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-            self.estimatedTimeLabel.text = [formatter stringFromDate:self.estimatedTime];
-            self.remindButton.hidden = NO;
+            if (level > 33) {
+                maxEXP = round([LPCoreAlgorithm expFunc:level] - [LPCoreAlgorithm expFunc:level - 33]);
+            } else {
+                maxEXP = round([LPCoreAlgorithm expFunc:level]);
+            }
+            self.maxLPLabel.text = [NSString stringWithFormat:@"%ld", (long)maxLP];
+            self.maxEXPLabel.text = [NSString stringWithFormat:@"%ld", (long)maxEXP];
+            if (level < 100) {
+                self.maxJPEXPLabel.text = [NSString stringWithFormat:@"%ld(日服)", (long)maxEXP / 2];
+            } else {
+                self.maxJPEXPLabel.text = @"";
+            }
+            if (lp > maxLP || lp < 0) {
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"意味は分からない" message:@"LP填写错误" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
+                [av show];
+                self.remindButton.hidden = YES;
+                self.estimatedTimeLabel.text = @"Error";
+            } else {
+                NSTimeInterval timeSinceNow = 360 * (maxLP - lp);
+                self.estimatedTime = [NSDate dateWithTimeIntervalSinceNow:timeSinceNow];
+                NSDateFormatter *formatter = [NSDateFormatter new];
+                formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+                self.estimatedTimeLabel.text = [formatter stringFromDate:self.estimatedTime];
+                self.remindButton.hidden = NO;
+            }
         }
     }
+    
+}
+
+- (void)dataError {
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"意味は分からない" message:@"数据填写错误" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
+    [av show];
+    self.maxLPLabel.text = @"Error";
+    self.maxEXPLabel.text = @"Error";
+    self.maxJPEXPLabel.text = @"";
+    self.estimatedTimeLabel.text = @"Error";
 }
 
 - (IBAction)remindButtonTouched:(id)sender {
@@ -123,6 +131,12 @@
 
 - (IBAction)llHelperButtonTouched:(id)sender {
     [self presentViewController:self.llHelperVC animated:YES completion:nil];
+}
+
+- (IBAction)cancelButtonTouched:(id)sender {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"( · 8 · )" message:@"好吧，到时候不会打搅你啦" delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil];
+    [av show];
 }
 
 - (void)registerLocalNotificationWithTime:(NSDate *)estimatedTime {

@@ -10,7 +10,7 @@
 		530802BC1C65CE2F0033A061 /* LPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 530802BB1C65CE2F0033A061 /* LPWebViewController.m */; };
 		530802BF1C65CEB50033A061 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 530802BE1C65CEB50033A061 /* BaseWebViewController.m */; };
 		530802C41C65D1060033A061 /* LPNetworkCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 530802C31C65D1060033A061 /* LPNetworkCenter.m */; };
-		53BEFA581C65D9F300AD54CF /* NotificationNotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BEFA571C65D9F300AD54CF /* NotificationNotesTableViewController.m */; };
+		53597C751C67447E0077B4F9 /* LPCoreAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 53597C741C67447E0077B4F9 /* LPCoreAlgorithm.m */; };
 		53BEFA5B1C65DBB900AD54CF /* LPNotificationNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BEFA5A1C65DBB900AD54CF /* LPNotificationNote.m */; };
 		53D814D31C646DE6002C01CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D814D21C646DE6002C01CA /* main.m */; };
 		53D814D61C646DE6002C01CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D814D51C646DE6002C01CA /* AppDelegate.m */; };
@@ -48,8 +48,8 @@
 		530802BE1C65CEB50033A061 /* BaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
 		530802C21C65D1060033A061 /* LPNetworkCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPNetworkCenter.h; sourceTree = "<group>"; };
 		530802C31C65D1060033A061 /* LPNetworkCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPNetworkCenter.m; sourceTree = "<group>"; };
-		53BEFA561C65D9F300AD54CF /* NotificationNotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationNotesTableViewController.h; sourceTree = "<group>"; };
-		53BEFA571C65D9F300AD54CF /* NotificationNotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationNotesTableViewController.m; sourceTree = "<group>"; };
+		53597C731C67447E0077B4F9 /* LPCoreAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPCoreAlgorithm.h; sourceTree = "<group>"; };
+		53597C741C67447E0077B4F9 /* LPCoreAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPCoreAlgorithm.m; sourceTree = "<group>"; };
 		53BEFA591C65DBB900AD54CF /* LPNotificationNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPNotificationNote.h; sourceTree = "<group>"; };
 		53BEFA5A1C65DBB900AD54CF /* LPNotificationNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPNotificationNote.m; sourceTree = "<group>"; };
 		53D814CE1C646DE6002C01CA /* SIFLPHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIFLPHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,8 +106,6 @@
 				530802BE1C65CEB50033A061 /* BaseWebViewController.m */,
 				530802BA1C65CE2F0033A061 /* LPWebViewController.h */,
 				530802BB1C65CE2F0033A061 /* LPWebViewController.m */,
-				53BEFA561C65D9F300AD54CF /* NotificationNotesTableViewController.h */,
-				53BEFA571C65D9F300AD54CF /* NotificationNotesTableViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -115,6 +113,8 @@
 		530802C11C65D0E60033A061 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				53597C731C67447E0077B4F9 /* LPCoreAlgorithm.h */,
+				53597C741C67447E0077B4F9 /* LPCoreAlgorithm.m */,
 				530802C21C65D1060033A061 /* LPNetworkCenter.h */,
 				530802C31C65D1060033A061 /* LPNetworkCenter.m */,
 				53BEFA591C65DBB900AD54CF /* LPNotificationNote.h */,
@@ -262,7 +262,6 @@
 				TargetAttributes = {
 					53D814CD1C646DE6002C01CA = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = XML8ZYMQJL;
 					};
 					53D814E61C646DE6002C01CA = {
 						CreatedOnToolsVersion = 7.2;
@@ -329,8 +328,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				53BEFA5B1C65DBB900AD54CF /* LPNotificationNote.m in Sources */,
-				53BEFA581C65D9F300AD54CF /* NotificationNotesTableViewController.m in Sources */,
 				53D814D91C646DE6002C01CA /* ViewController.m in Sources */,
+				53597C751C67447E0077B4F9 /* LPCoreAlgorithm.m in Sources */,
 				530802BC1C65CE2F0033A061 /* LPWebViewController.m in Sources */,
 				53D814D61C646DE6002C01CA /* AppDelegate.m in Sources */,
 				530802BF1C65CEB50033A061 /* BaseWebViewController.m in Sources */,
@@ -476,12 +475,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SIFLPHelper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ifLab.SIFLPHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhrmoe.SIFLPHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -492,12 +491,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SIFLPHelper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ifLab.SIFLPHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhrmoe.SIFLPHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

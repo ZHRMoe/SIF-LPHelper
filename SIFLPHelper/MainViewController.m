@@ -45,7 +45,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"SIF LP助手";
+    self.title = @"SIF助手";
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard:)];
     tgr.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tgr];

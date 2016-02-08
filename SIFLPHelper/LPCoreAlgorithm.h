@@ -12,5 +12,6 @@
 
 + (BOOL)isPureInt:(NSString *)string;
 + (double)expFunc:(NSInteger)level;
++ (double)lpFunc:(NSInteger)level;
 
 @end

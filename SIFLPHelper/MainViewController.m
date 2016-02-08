@@ -76,15 +76,11 @@
     } else {
         level = [self.currentLevelTextField.text integerValue];
         lp = [self.currentLPTextField.text integerValue];
-        maxLP = 25 + floor(MIN(level, 300) / 2) + floor(MAX(level - 300, 0) / 3);
+        maxLP = [LPCoreAlgorithm lpFunc:level];
         if (level <= 0) {
             [self dataError];
         } else {
-            if (level > 33) {
-                maxEXP = round([LPCoreAlgorithm expFunc:level] - [LPCoreAlgorithm expFunc:level - 33]);
-            } else {
-                maxEXP = round([LPCoreAlgorithm expFunc:level]);
-            }
+            maxEXP = [LPCoreAlgorithm expFunc:level];
             self.maxLPLabel.text = [NSString stringWithFormat:@"%ld", (long)maxLP];
             self.maxEXPLabel.text = [NSString stringWithFormat:@"%ld", (long)maxEXP];
             if (level < 100) {

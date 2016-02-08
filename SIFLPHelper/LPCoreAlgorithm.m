@@ -8,6 +8,8 @@
 
 #import "LPCoreAlgorithm.h"
 
+#define EXPF(x) 0.522 * x * x + 0.522 * x + 10.0005
+
 @implementation LPCoreAlgorithm
 
 + (BOOL)isPureInt:(NSString *)string {
@@ -17,7 +19,18 @@
 }
 
 + (double)expFunc:(NSInteger)level {
-    return 0.522 * level * level + 0.522 * level + 10.0005;
+    double exp;
+    if (level > 33) {
+        NSInteger nlevel = level - 33;
+        exp = round((EXPF(level)) - (EXPF(nlevel)));
+    } else {
+        exp = round(EXPF(level));
+    }
+    return exp;
+}
+
++ (double)lpFunc:(NSInteger)level {
+    return 25 + floor(MIN(level, 300) / 2) + floor(MAX(level - 300, 0) / 3);
 }
 
 @end

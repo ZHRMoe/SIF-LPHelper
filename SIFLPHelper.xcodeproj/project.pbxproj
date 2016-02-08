@@ -11,7 +11,6 @@
 		530802BF1C65CEB50033A061 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 530802BE1C65CEB50033A061 /* BaseWebViewController.m */; };
 		530802C41C65D1060033A061 /* LPNetworkCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 530802C31C65D1060033A061 /* LPNetworkCenter.m */; };
 		53597C751C67447E0077B4F9 /* LPCoreAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 53597C741C67447E0077B4F9 /* LPCoreAlgorithm.m */; };
-		53BEFA5B1C65DBB900AD54CF /* LPNotificationNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BEFA5A1C65DBB900AD54CF /* LPNotificationNote.m */; };
 		53D814D31C646DE6002C01CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D814D21C646DE6002C01CA /* main.m */; };
 		53D814D61C646DE6002C01CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D814D51C646DE6002C01CA /* AppDelegate.m */; };
 		53D814D91C646DE6002C01CA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D814D81C646DE6002C01CA /* MainViewController.m */; };
@@ -50,8 +49,6 @@
 		530802C31C65D1060033A061 /* LPNetworkCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPNetworkCenter.m; sourceTree = "<group>"; };
 		53597C731C67447E0077B4F9 /* LPCoreAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPCoreAlgorithm.h; sourceTree = "<group>"; };
 		53597C741C67447E0077B4F9 /* LPCoreAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPCoreAlgorithm.m; sourceTree = "<group>"; };
-		53BEFA591C65DBB900AD54CF /* LPNotificationNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPNotificationNote.h; sourceTree = "<group>"; };
-		53BEFA5A1C65DBB900AD54CF /* LPNotificationNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPNotificationNote.m; sourceTree = "<group>"; };
 		53D814CE1C646DE6002C01CA /* SIFLPHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIFLPHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D814D21C646DE6002C01CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		53D814D41C646DE6002C01CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,7 +94,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		530802C01C65D0D80033A061 /* ViewController */ = {
+		530802C01C65D0D80033A061 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				53D814D71C646DE6002C01CA /* MainViewController.h */,
@@ -107,7 +104,7 @@
 				530802BA1C65CE2F0033A061 /* LPWebViewController.h */,
 				530802BB1C65CE2F0033A061 /* LPWebViewController.m */,
 			);
-			name = ViewController;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		530802C11C65D0E60033A061 /* Model */ = {
@@ -117,8 +114,6 @@
 				53597C741C67447E0077B4F9 /* LPCoreAlgorithm.m */,
 				530802C21C65D1060033A061 /* LPNetworkCenter.h */,
 				530802C31C65D1060033A061 /* LPNetworkCenter.m */,
-				53BEFA591C65DBB900AD54CF /* LPNotificationNote.h */,
-				53BEFA5A1C65DBB900AD54CF /* LPNotificationNote.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -147,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				530802C11C65D0E60033A061 /* Model */,
-				530802C01C65D0D80033A061 /* ViewController */,
+				530802C01C65D0D80033A061 /* Controller */,
 				53D814D41C646DE6002C01CA /* AppDelegate.h */,
 				53D814D51C646DE6002C01CA /* AppDelegate.m */,
 				53D814DA1C646DE6002C01CA /* Main.storyboard */,
@@ -327,7 +322,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53BEFA5B1C65DBB900AD54CF /* LPNotificationNote.m in Sources */,
 				53D814D91C646DE6002C01CA /* MainViewController.m in Sources */,
 				53597C751C67447E0077B4F9 /* LPCoreAlgorithm.m in Sources */,
 				530802BC1C65CE2F0033A061 /* LPWebViewController.m in Sources */,

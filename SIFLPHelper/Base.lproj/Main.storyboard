@@ -168,7 +168,7 @@
                                 <action selector="llHelperButtonTouched:" destination="o1B-YP-xoY" id="JPF-xd-T4G"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="卡片天梯" id="fHR-Fk-vcn">
+                        <barButtonItem key="rightBarButtonItem" title="卡片查询" id="fHR-Fk-vcn">
                             <connections>
                                 <segue destination="14L-kR-MSc" kind="push" id="sb3-NW-3ON"/>
                             </connections>
@@ -188,10 +188,10 @@
             </objects>
             <point key="canvasLocation" x="808" y="466"/>
         </scene>
-        <!--卡片天梯-->
+        <!--卡片查询-->
         <scene sceneID="ZbD-Jf-Fq3">
             <objects>
-                <viewController id="14L-kR-MSc" customClass="CardLadderViewController" sceneMemberID="viewController">
+                <viewController id="14L-kR-MSc" customClass="CardCheckViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QZm-QJ-KVG"/>
                         <viewControllerLayoutGuide type="bottom" id="qBq-2z-fF5"/>
@@ -201,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="卡片天梯" id="qN3-NX-wXV"/>
+                    <navigationItem key="navigationItem" title="卡片查询" id="qN3-NX-wXV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fu4-ra-X7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

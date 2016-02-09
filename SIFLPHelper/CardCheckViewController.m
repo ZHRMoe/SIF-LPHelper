@@ -17,12 +17,13 @@
 @property (nonatomic, copy) NSDictionary *cardDic;
 @property (nonatomic, copy) NSMutableArray *selectedCards;
 @property (nonatomic, copy) NSArray *characterArr;
+@property (nonatomic, copy) NSArray *jpcharacterArr;
 @property (nonatomic, copy) NSArray *attributeArr;
 @property (nonatomic, copy) NSArray *gradingArr;
 
-@property (nonatomic, copy) NSString *selectedCharacter;
-@property (nonatomic, copy) NSString *selectedAttribute;
-@property (nonatomic, copy) NSString *selectedGrading;
+@property (nonatomic) NSInteger selectedCharacter;
+@property (nonatomic) NSInteger selectedAttribute;
+@property (nonatomic) NSInteger selectedGrading;
 
 @end
 
@@ -34,11 +35,12 @@
     NSData *jsonData = [NSData dataWithContentsOfFile:path options:NSDataReadingMappedIfSafe error:nil];
     self.cardDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     
-    self.selectedCharacter = @"高坂穗乃果";
-    self.selectedAttribute = @"smile";
-    self.selectedGrading = @"SS";
+    self.selectedCharacter = 0;
+    self.selectedAttribute = 0;
+    self.selectedGrading = 0;
     
     self.characterArr = @[@"高坂穗乃果", @"绚濑绘里", @"南小鸟", @"园田海未", @"星空凛", @"西木野真姬", @"东条希", @"小泉花阳", @"矢泽妮可"];
+    self.jpcharacterArr = @[@"高坂穂乃果", @"絢瀬絵里", @"南ことり", @"園田海未", @"星空凛", @"西木野真姫", @"東條希", @"小泉花陽", @"矢澤にこ"];
     self.attributeArr = @[@"smile", @"pure", @"cool"];
     self.gradingArr = @[@"", @"SS", @"S+", @"S", @"A+", @"A", @"A-", @"B+", @"B", @"B-", @"C+", @"C", @"C-", @"D+", @"D"];
     
@@ -65,7 +67,7 @@
     NSMutableArray *selectedArr = [[NSMutableArray alloc] init];
     for (int i = 1; i <= self.cardDic.count; ++i) {
         NSDictionary *cardInfo = [self.cardDic valueForKey:[NSString stringWithFormat:@"%d", i]];
-        if ([[cardInfo valueForKey:@"name"] isEqualToString:self.selectedCharacter] && [[cardInfo valueForKey:@"attribute"] isEqualToString:self.selectedAttribute]) {
+        if (([[cardInfo valueForKey:@"name"] isEqualToString:self.characterArr[self.selectedCharacter]] || [[cardInfo valueForKey:@"name"] isEqualToString:self.jpcharacterArr[self.selectedCharacter]]) && [[cardInfo valueForKey:@"attribute"] isEqualToString:self.attributeArr[self.selectedAttribute]]) {
             [selectedArr addObject:[NSNumber numberWithInt:i]];
         }
     }
@@ -111,11 +113,11 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (component == 0) {
-        self.selectedCharacter = self.characterArr[row];
+        self.selectedCharacter = row;
     } else if (component == 1) {
-        self.selectedAttribute = self.attributeArr[row];
+        self.selectedAttribute = row;
     } else {
-        self.selectedGrading = self.gradingArr[row];
+        self.selectedGrading = row;
     }
     [self.cardTableView reloadData];
 }
@@ -150,11 +152,11 @@
         cardSeries = (NSString *)series;
     }
     if (![cardName isKindOfClass:[NSNull class]]) {
-        ((UILabel *)[cell.contentView viewWithTag:characterLabel]).text = [NSString stringWithFormat:@"%@ %@", self.selectedCharacter, cardName];
+        ((UILabel *)[cell.contentView viewWithTag:characterLabel]).text = [NSString stringWithFormat:@"%@ %@", self.characterArr[self.selectedCharacter], cardName];
     } else if (cardSeries){
-        ((UILabel *)[cell.contentView viewWithTag:characterLabel]).text = [NSString stringWithFormat:@"%@ %@", self.selectedCharacter, cardSeries];
+        ((UILabel *)[cell.contentView viewWithTag:characterLabel]).text = [NSString stringWithFormat:@"%@ %@", self.characterArr[self.selectedCharacter], cardSeries];
     } else {
-        ((UILabel *)[cell.contentView viewWithTag:characterLabel]).text = [NSString stringWithFormat:@"%@", self.selectedCharacter];
+        ((UILabel *)[cell.contentView viewWithTag:characterLabel]).text = [NSString stringWithFormat:@"%@", self.characterArr[self.selectedCharacter]];
     }
     
     ((UILabel *)[cell.contentView viewWithTag:smileLabel]).text = [NSString stringWithFormat:@"%@", [[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"smile2"]];

@@ -13,7 +13,7 @@
 #define smileLabel 3
 #define pureLabel 4
 #define coolLabel 5
-#define strengthLabel 6
+#define skillLabel 6
 
 @interface CardCheckViewController : UIViewController
 

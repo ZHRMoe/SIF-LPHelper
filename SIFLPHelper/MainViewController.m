@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *currentLevelTextField;
 @property (weak, nonatomic) IBOutlet UITextField *currentLPTextField;
 @property (weak, nonatomic) IBOutlet UILabel *maxLPLabel;
+@property (weak, nonatomic) IBOutlet UILabel *expLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxEXPLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxJPEXPLabel;
 @property (weak, nonatomic) IBOutlet UILabel *estimatedTimeLabel;
@@ -58,10 +59,19 @@
         formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
         self.estimatedTimeLabel.text = [formatter stringFromDate:[noteDic objectForKey:@"EstimatedTime"]];
     }
+    if ([UIScreen mainScreen].bounds.size.height == 480) {
+        [self hideEXP];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)hideEXP {
+    self.expLabel.hidden = YES;
+    self.maxEXPLabel.hidden = YES;
+    self.maxJPEXPLabel.hidden = YES;
 }
 
 - (void)hideKeyBoard:(UITapGestureRecognizer *)tap {

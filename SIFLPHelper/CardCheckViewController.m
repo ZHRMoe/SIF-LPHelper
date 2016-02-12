@@ -20,6 +20,9 @@
 @property (nonatomic, copy) NSArray *jpcharacterArr;
 @property (nonatomic, copy) NSArray *attributeArr;
 @property (nonatomic, copy) NSArray *gradingArr;
+@property (nonatomic, copy) NSArray *triggerArr;
+@property (nonatomic, copy) NSArray *effectArr;
+@property (nonatomic, copy) NSArray *unitArr;
 
 @property (nonatomic) NSInteger selectedCharacter;
 @property (nonatomic) NSInteger selectedAttribute;
@@ -43,6 +46,9 @@
     self.jpcharacterArr = @[@"高坂穂乃果", @"絢瀬絵里", @"南ことり", @"園田海未", @"星空凛", @"西木野真姫", @"東條希", @"小泉花陽", @"矢澤にこ"];
     self.attributeArr = @[@"smile", @"pure", @"cool"];
     self.gradingArr = @[@"", @"SS", @"S+", @"S", @"A+", @"A", @"A-", @"B+", @"B", @"B-", @"C+", @"C", @"C-", @"D+", @"D"];
+    self.triggerArr = @[@"", @"秒", @"", @"个图标", @"combo", @"", @"个perfect", @"", @"", @"", @"", @"", @"个星星perfect"];
+    self.effectArr = @[@"", @"", @"", @"", @"稍微增强判定", @"增强判定", @"", @"", @"", @"回复", @"", @"增加"];
+    self.unitArr = @[@"", @"", @"", @"", @"秒", @"秒", @"", @"", @"", @"点体力", @"", @"分"];
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 50)];
@@ -134,6 +140,7 @@
         }
     }
     
+    //Avatar
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"avatarpluspath"]]];
     [((UIImageView *)[cell.contentView viewWithTag:avatarImage]) setImageWithURLRequest:request
                                                                        placeholderImage:nil
@@ -143,6 +150,7 @@
                                                                                 failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
                                                                                     NSLog(@"%@", error);
                                                                                 }];
+    //Character
     NSString *cardName = [[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"eponym"];
     NSArray *series = [[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"series"];
     NSString *cardSeries;
@@ -159,11 +167,22 @@
         ((UILabel *)[cell.contentView viewWithTag:characterLabel]).text = [NSString stringWithFormat:@"%@", self.characterArr[self.selectedCharacter]];
     }
     
+    //Smile Pure Cool
     ((UILabel *)[cell.contentView viewWithTag:smileLabel]).text = [NSString stringWithFormat:@"%@", [[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"smile2"]];
     ((UILabel *)[cell.contentView viewWithTag:pureLabel]).text = [NSString stringWithFormat:@"%@", [[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"pure2"]];
     ((UILabel *)[cell.contentView viewWithTag:coolLabel]).text = [NSString stringWithFormat:@"%@", [[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"cool2"]];
-    ((UILabel *)[cell.contentView viewWithTag:strengthLabel]).text = @"";
     
+    //Skill
+    NSArray *skillDetail = [[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"skilldetail"];
+    NSLog(@"%@", skillDetail[0]);
+    NSString *skillName = [[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"skillname"];
+    NSString *require = [skillDetail[0] valueForKey:@"require"];
+    NSString *requireUnit = self.triggerArr[[[[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"triggertype"] integerValue]];
+    NSString *possibility = [NSString stringWithFormat:@"%@", [skillDetail[0] valueForKey:@"possibility"]];
+    NSString *effect = self.effectArr[[[[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"skilleffect"] integerValue]];
+    NSString *effectScore = [skillDetail[0] valueForKey:@"score"];
+    NSString *effectUnit = self.unitArr[[[[self.cardDic valueForKey:[NSString stringWithFormat:@"%@", self.selectedCards[indexPath.row]]] valueForKey:@"skilleffect"] integerValue]];
+    ((UILabel *)[cell.contentView viewWithTag:skillLabel]).text = [NSString stringWithFormat:@"%@\n每%@%@有百分之%@概率%@%@%@", skillName, require, requireUnit, possibility, effect, effectScore, effectUnit];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -174,7 +193,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 140;
+    return 120;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

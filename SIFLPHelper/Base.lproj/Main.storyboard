@@ -178,6 +178,7 @@
                         <outlet property="currentLPTextField" destination="2El-UV-HRR" id="DPP-YW-az6"/>
                         <outlet property="currentLevelTextField" destination="HIZ-wf-yei" id="3Ze-MP-YA9"/>
                         <outlet property="estimatedTimeLabel" destination="Jri-Zf-PzF" id="7OW-Zb-hdT"/>
+                        <outlet property="expLabel" destination="sjb-oh-Yjs" id="bsW-RN-ry9"/>
                         <outlet property="maxEXPLabel" destination="hbe-Ct-gMc" id="qKZ-QW-Ce2"/>
                         <outlet property="maxJPEXPLabel" destination="SCz-w0-ERS" id="wlC-aG-AmO"/>
                         <outlet property="maxLPLabel" destination="GOd-OX-Uk8" id="3DB-mr-T8i"/>
